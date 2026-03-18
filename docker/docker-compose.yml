@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  backend:
+    build: ../backend
+    container_name: dftguard-api
+    ports: ["8000:8000"]
+    restart: unless-stopped
+  frontend:
+    image: nginx:alpine
+    container_name: dftguard-ui
+    ports: ["3000:80"]
+    volumes: ["../frontend/dftguard.html:/usr/share/nginx/html/index.html"]
+    depends_on: [backend]
+    restart: unless-stopped

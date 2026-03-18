@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "builds": [{ "src": "frontend/dftguard.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "/frontend/dftguard.html" }]
+}
